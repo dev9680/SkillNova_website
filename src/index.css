@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  transition: all 0.3s ease;
+}
+body {
+  @apply bg-richblack-900 text-richblack-5;
+}
+.dark body {
+  @apply bg-white text-richblack-900;
+}
