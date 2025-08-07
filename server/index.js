@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://skill-nova-website-frontend.vercel.app/",
+  "https://skill-nova-website-frontend.vercel.app",
 ];
 
 app.use(
