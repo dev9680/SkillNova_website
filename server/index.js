@@ -22,14 +22,19 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 const allowedOrigins = [
-  "http://localhost:3000",
-  "http://192.168.0.103:3000",
-  "https://skill-nova-website-frontend.vercel.app/",
+ 
+  "https://skill-nova-website-frontend-14phl8h7b.vercel.app/",
 ];
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
